@@ -33,11 +33,18 @@ const addSubmitListener = () => {
       handleClick(newRamen)});
     ramenMenu.appendChild(img);
     //to reset the form
-    ramenForm.reset
-  })
-  
+    ramenForm.reset();
 
-}
+    //option to send new ramen data to API
+    fetch('http://localhost:3000/ramens', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(newRamen),
+    });
+  });
+};
 
 const displayRamens = () => {
   // Add code
