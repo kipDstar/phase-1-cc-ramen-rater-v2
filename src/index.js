@@ -13,8 +13,30 @@ const handleClick = (ramen) => {
 };
 
 const addSubmitListener = () => {
-  const ramenMenu = document.getElementById('ramen-menu');
+  const ramenForm = document.getElementById('new-ramen');
+  ramenForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const newRamen = {
+      name: e.target.name.value,
+      restarunt: e.target.restaurant.value,
+      image: e.target.image.value,
+      rating: e.target.rating.value,
+      comment: e.target.comment.value,
+    };
+
+    //to add new ramen to the menu
+    const ramenMenu = document.querySelector('#new-ramen');
+    const img = document.createElement('img');
+    img.src = newRamen.image;
+    img.alt = newRamen.name;
+    img.addEventListener('click', () => {
+      handleClick(newRamen)});
+    ramenMenu.appendChild(img);
+    //to reset the form
+    ramenForm.reset
+  })
   
+
 }
 
 const displayRamens = () => {
