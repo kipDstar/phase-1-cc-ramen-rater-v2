@@ -47,11 +47,27 @@ const addSubmitListener = () => {
 };
 
 const displayRamens = () => {
-  // Add code
+  //to fetch ramen menu from the API(virtual backend)and populate the menu and details
+  fetch('http://localhost:3000/ramens')
+    .then((response) => response.json())
+    ,then((ramenData) => {
+      const ramenMenu = document.getElementById('ramen-menu');
+      ramenData.forEach((ramen) => {
+        const img = document.createElement('img');
+        img.src = ramen.image;
+        img.alt = ramen.name;
+        img.addEventListener('click', () => handleClick(ramen));
+        ramenMenu.appendChild(img);
+      })
+    })
+    .catch((error) => {
+      console.error('Error fetching ramen data', error);
+    })
 };
 
 const main = () => {
   // Invoke displayRamens here
+  
   // Invoke addSubmitListener here
 }
 
