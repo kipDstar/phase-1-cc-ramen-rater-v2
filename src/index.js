@@ -2,14 +2,10 @@
 
 // Callbacks
 const handleClick = (ramen) => {
-  const handleclick = (ramen) => {
-    document.querySelector('#ramen-menu img').addEventListener('click', (e) => {
-      // Assuming 'ramen' contains details about the clicked ramen
-      document.querySelector('#ramen-detail h2').textContent = ramen.name;
-      document.querySelector('#ramen-detail h3').textContent = ramen.restaurant;
-      document.querySelector('#ramen-detail img').src = ramen.image;
-    });
-  };
+  const ramenDetail = document.querySelector('#ramen-detail');
+  ramenDetail.querySelector('h2').textContent = ramen.name;
+  ramenDetail.querySelector('h3').textContent = ramen.restaurant;
+  ramenDetail.querySelector('img').src = ramen.image;
 };
 
 const addSubmitListener = () => {
@@ -50,19 +46,19 @@ const displayRamens = () => {
   //to fetch ramen menu from the API(virtual backend)and populate the menu and details
   fetch('http://localhost:3000/ramens')
     .then((response) => response.json())
-    ,then((ramenData) => {
-      const ramenMenu = document.getElementById('ramen-menu');
+    .then((ramenData) => {
+      const ramenMenu = document.querySelector('#ramen-menu');
       ramenData.forEach((ramen) => {
         const img = document.createElement('img');
         img.src = ramen.image;
         img.alt = ramen.name;
         img.addEventListener('click', () => handleClick(ramen));
         ramenMenu.appendChild(img);
-      })
+      });
     })
     .catch((error) => {
       console.error('Error fetching ramen data', error);
-    })
+    });
 };
 
 const main = () => {
@@ -70,9 +66,9 @@ const main = () => {
   displayRamens();
   // Invoke addSubmitListener here
   addSubmitListener();
-}
+};
 
-main()
+main();
 
 // Export functions for testing
 export {
