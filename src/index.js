@@ -1,5 +1,8 @@
 // index.js
-
+document.addEventListener('DOMContentLoaded', () => {
+  // Initial setup or function calls can go here
+  console.log('DOM fully loaded and parsed');
+});
 // Callbacks
 const handleClick = (ramen) => {
   const ramenDetail = document.querySelector('#ramen-detail');
