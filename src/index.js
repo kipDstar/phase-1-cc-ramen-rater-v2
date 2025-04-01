@@ -12,12 +12,13 @@ const addSubmitListener = () => {
   const ramenForm = document.getElementById('new-ramen');
   ramenForm.addEventListener('submit', (e) => {
     e.preventDefault();
+    console.log(e.target);
     const newRamen = {
-      name: e.target.name.value,
-      restaurant: e.target.restaurant.value, 
-      image: e.target.image.value,
-      rating: e.target.rating.value,
-      comment: e.target.comment.value,
+      name: e.target.name.value || '',
+      restaurant: e.target.restaurant.value || '',
+      image: e.target.image.value || '',
+      rating: e.target.rating.value || '',
+      comment: e.target.comment.value || '',
     };
 
     // Add new ramen to the menu
