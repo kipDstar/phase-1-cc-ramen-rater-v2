@@ -2,11 +2,19 @@
 
 // Callbacks
 const handleClick = (ramen) => {
-  // Add code
+  const handleclick = (ramen) => {
+    document.querySelector('#ramen-menu img').addEventListener('click', (e) => {
+      // Assuming 'ramen' contains details about the clicked ramen
+      document.querySelector('#ramen-detail h2').textContent = ramen.name;
+      document.querySelector('#ramen-detail h3').textContent = ramen.restaurant;
+      document.querySelector('#ramen-detail img').src = ramen.image;
+    });
+  };
 };
 
 const addSubmitListener = () => {
-  // Add code
+  const ramenMenu = document.getElementById('ramen-menu');
+  
 }
 
 const displayRamens = () => {
