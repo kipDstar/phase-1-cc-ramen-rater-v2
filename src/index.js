@@ -135,11 +135,13 @@ const main = () => {
   addDeleteListener();
 };
 
-export {
+main();
+
+/*export {
   displayRamens,
   addSubmitListener,
   addEditListener,
   addDeleteListener,
   handleClick,
   main,
-};
+};*/
