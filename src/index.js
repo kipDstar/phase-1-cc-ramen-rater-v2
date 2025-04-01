@@ -14,24 +14,24 @@ const addSubmitListener = () => {
     e.preventDefault();
     const newRamen = {
       name: e.target.name.value,
-      restarunt: e.target.restaurant.value,
+      restaurant: e.target.restaurant.value, 
       image: e.target.image.value,
       rating: e.target.rating.value,
       comment: e.target.comment.value,
     };
 
-    //to add new ramen to the menu
-    const ramenMenu = document.querySelector('#new-ramen');
+    // Add new ramen to the menu
+    const ramenMenu = document.querySelector('#ramen-menu'); 
     const img = document.createElement('img');
     img.src = newRamen.image;
     img.alt = newRamen.name;
-    img.addEventListener('click', () => {
-      handleClick(newRamen)});
+    img.addEventListener('click', () => handleClick(newRamen));
     ramenMenu.appendChild(img);
-    //to reset the form
+
+    // Reset the form
     ramenForm.reset();
 
-    //option to send new ramen data to API
+    // Optionally send new ramen data to the API
     fetch('http://localhost:3000/ramens', {
       method: 'POST',
       headers: {
