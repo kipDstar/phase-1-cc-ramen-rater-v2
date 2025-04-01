@@ -67,8 +67,9 @@ const displayRamens = () => {
 
 const main = () => {
   // Invoke displayRamens here
-  
+  displayRamens();
   // Invoke addSubmitListener here
+  addSubmitListener();
 }
 
 main()
