@@ -10,6 +10,7 @@ const handleClick = (ramen) => {
 
 const addSubmitListener = () => {
   const ramenForm = document.getElementById('new-ramen');
+  console.log(ramenForm);
   ramenForm.addEventListener('submit', (e) => {
     e.preventDefault();
     console.log(e.target);
