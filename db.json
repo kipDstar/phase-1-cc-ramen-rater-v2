@@ -47,6 +47,22 @@
       "image": "https://www.hotelboulevard.co.ke/wp-content/uploads/elementor/thumbs/Snapinsta.app_363777541_17923602797751631_4086010676954433021_n_1080-qs5f7pdy426ihs6b9geivvesafbz9sdyh3zy6b7om0.jpg",
       "rating": "5",
       "comment": "very nice"
+    },
+    {
+      "id": "ce9c",
+      "name": "Chekafe",
+      "restaurant": "Nairobi restraurant",
+      "image": "https://images.happycow.net/venues/1024/40/26/hcmp402669_2714732.jpeg",
+      "rating": "8",
+      "comment": "could do better with their bok choy"
+    },
+    {
+      "id": "1b25",
+      "name": "",
+      "restaurant": "",
+      "image": "",
+      "rating": "",
+      "comment": ""
     }
   ]
 }
