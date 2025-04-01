@@ -24,6 +24,7 @@ const addSubmitListener = () => {
 
     // Add new ramen to the menu
     const ramenMenu = document.querySelector('#ramen-menu'); 
+    console.log(ramenMenu);
     const img = document.createElement('img');
     img.src = newRamen.image;
     img.alt = newRamen.name;
